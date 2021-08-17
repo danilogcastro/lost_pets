@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts 'Seeding...'
+
+20.times do
+  Pet.create(
+    name: Faker::Games::Pokemon.name,
+    location: Faker::Games::Pokemon.location,
+    species: Pet::SPECIES.sample,
+    found_on: Faker::Date.in_date_period(month: 2)
+  )
+end
+
+puts 'Done'
